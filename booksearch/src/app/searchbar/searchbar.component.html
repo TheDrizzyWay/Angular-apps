@@ -1,3 +1,9 @@
 <mat-toolbar color="primary">
   Welcome to the Drizzy Booksearch App
+  <div class="search" #search>
+    <input type="search" class="search-box" #box/>
+    <span class="search-button" (click)="toggleClass()">
+      <span class="search-icon" #icon></span>
+    </span>
+  </div>
 </mat-toolbar>
