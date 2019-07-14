@@ -7,11 +7,13 @@ import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { ToggleControlDirective } from './directives/toggle-control.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    ToggleControlDirective
   ],
   imports: [
     BrowserModule,
