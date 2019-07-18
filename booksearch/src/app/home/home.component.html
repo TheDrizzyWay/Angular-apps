@@ -1,4 +1,4 @@
 <ng-container>
   <app-searchbar (searchBook)="searchBook($event)"></app-searchbar>
-  <p>{{ message }}</p>
+  <p *ngIf="message">{{ message }}</p>
 </ng-container>

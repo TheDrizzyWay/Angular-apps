@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { ToggleControlDirective } from './directives/toggle-control.directive';
-import { BooksComponent } from './books/books.component';
+import { BooksComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
