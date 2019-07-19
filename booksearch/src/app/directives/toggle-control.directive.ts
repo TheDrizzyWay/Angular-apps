@@ -1,6 +1,7 @@
 import { 
   Directive, ElementRef, Renderer2, HostListener
 } from '@angular/core';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Directive({
   selector: '[appToggleControl]'
