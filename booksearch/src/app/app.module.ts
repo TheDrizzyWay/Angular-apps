@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { ToggleControlDirective } from './directives/toggle-control.directive';
 import { BooksComponent } from './home/home.component';
+import { BookComponent } from './book/book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchbarComponent,
     ToggleControlDirective,
-    BooksComponent
+    BooksComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,

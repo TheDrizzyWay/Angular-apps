@@ -19,11 +19,9 @@ export class BooksComponent implements OnInit {
   }
 
   searchBook(term: string): void {
-    this.bookService.getBooks(term).subscribe(bookObject => {
-      this.books = bookObject.items;
-      console.log(this.books);
-      this.message = '';
-    });
+    this.books = this.bookService.getBooks(term) as unknown as any[];
+    console.log(this.books);
+    this.message = '';
   }
 
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, tap, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { IBookObject } from '../models/BookObject';
 
@@ -8,12 +8,16 @@ import { IBookObject } from '../models/BookObject';
   providedIn: 'root'
 })
 export class BookService {
-  searchUrl: string = 'https://www.googleapis.com/books/v1/volumes';
-  constructor(private http: HttpClient) { }
+  searchUrl: string;
+  constructor(private http: HttpClient) {
+    this.searchUrl = 'https://www.googleapis.com/books/v1/volumes';
+   }
 
-  getBooks(term: string): Observable<IBookObject> {
+  getBooks(term: string): Observable<any[]> {
     return this.http.get<IBookObject>(`${this.searchUrl}?q=${term}&startIndex=0`)
-      .pipe(tap(() => console.log('fetched')), catchError(err => this.handleError(err)));
+      .pipe(tap(() => console.log('fetched')),
+      map(res => res.items),
+      catchError(err => this.handleError(err)));
   }
 
   handleError(err: any): Observable<any> {
