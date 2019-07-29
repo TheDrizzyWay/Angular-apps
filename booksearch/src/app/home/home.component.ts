@@ -19,9 +19,12 @@ export class BooksComponent implements OnInit {
   }
 
   searchBook(term: string): void {
-    this.books = this.bookService.getBooks(term) as unknown as any[];
-    console.log(this.books);
-    this.message = '';
+    this.bookService.getBooks(term).subscribe((items) => {
+      if(!items) return this.message = `No results found for ${term}`;
+      this.books = items;
+      console.log(this.books);
+      this.message = '';
+    });
   }
 
 }

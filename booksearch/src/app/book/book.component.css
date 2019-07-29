@@ -1,0 +1,14 @@
+.example-card {
+    width: 250px;
+  }
+
+.example-card img {
+    max-height: 250px;
+    object-fit: contain;
+}
+
+mat-card-content h4 {
+    padding: 0;
+    margin: 0;
+    color: blueviolet;
+}

@@ -1,3 +1,15 @@
-<p>
-  book works!
-</p>
+<mat-card class="example-card">
+  <img mat-card-image [src]="book.volumeInfo.imageLinks.thumbnail" alt="Cover Image">
+  <mat-card-content>
+    <h3>{{ book.volumeInfo.title }}</h3>
+    <h3 *ngIf="book.volumeInfo.authors.length > 0; else N/A">
+      Author: {{ book.volumeInfo.authors[0] }}
+    </h3>
+    <h4>Pages: {{ book.volumeInfo.pageCount }}</h4>
+    <h4>Published: {{ book.volumeInfo.publishedDate }}</h4>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>View Details</button>
+    <button mat-button>BUY</button>
+  </mat-card-actions>
+</mat-card>

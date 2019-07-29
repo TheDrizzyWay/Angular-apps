@@ -1,4 +1,9 @@
 <ng-container>
   <app-searchbar (searchBook)="searchBook($event)"></app-searchbar>
   <p *ngIf="message">{{ message }}</p>
+  <mat-grid-list cols="3" rowHeight=500px gutterSize="2px">
+  <mat-grid-tile *ngFor="let book of books">
+      <app-book [book]="book"></app-book>
+  </mat-grid-tile>
+  </mat-grid-list>
 </ng-container>
