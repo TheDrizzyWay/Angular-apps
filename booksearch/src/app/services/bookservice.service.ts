@@ -13,8 +13,8 @@ export class BookService {
     this.searchUrl = 'https://www.googleapis.com/books/v1/volumes';
    }
 
-  getBooks(term: string): Observable<any[]> {
-    return this.http.get<IBookObject>(`${this.searchUrl}?q=${term}&startIndex=0`)
+  getBooks({ term, startIndex }: { term: string; startIndex: number; }): Observable<any[]> {
+    return this.http.get<IBookObject>(`${this.searchUrl}?q=${term}&startIndex=${startIndex}`)
       .pipe(tap(() => console.log('fetched')),
       map(res => res.items),
       catchError(err => this.handleError(err)));
