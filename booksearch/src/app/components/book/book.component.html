@@ -2,7 +2,7 @@
   <img mat-card-image [src]="book.volumeInfo.imageLinks.thumbnail" alt="Cover Image">
   <mat-card-content>
     <h3>{{ book.volumeInfo.title }}</h3>
-    <h3 *ngIf="book.volumeInfo.authors.length > 0; else N/A">
+    <h3 *ngIf="book.volumeInfo.authors; else N/A">
       Author: {{ book.volumeInfo.authors[0] }}
     </h3>
     <h4>Pages: {{ book.volumeInfo.pageCount }}</h4>

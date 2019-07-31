@@ -1,4 +1,4 @@
-import { 
+import {
   Directive, ElementRef, Renderer2, HostListener
 } from '@angular/core';
 
@@ -6,14 +6,14 @@ import {
   selector: '[appToggleControl]'
 })
 export class ToggleControlDirective {
-  closed: boolean = true;
+  closed = true;
   constructor(
     private renderer: Renderer2,
     private elRef: ElementRef) { }
 
   @HostListener('click')
 
-  toggleClass():void {
+  toggleClass(): void {
     this.closed = !this.closed;
     const currentElement = this.elRef.nativeElement;
     const parentElement = this.renderer.parentNode(currentElement);

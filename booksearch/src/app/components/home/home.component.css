@@ -1,3 +1,12 @@
 mat-grid-list {
     margin-top: 5px;
 }
+
+.target {
+  background-color: #000;
+  color: #fff;
+}
+
+.show-target {
+  display: none;
+}

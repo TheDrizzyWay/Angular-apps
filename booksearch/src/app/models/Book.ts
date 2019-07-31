@@ -5,7 +5,7 @@ interface BookInfo {
     categories: string[];
     contentVersion: string;
     description: string;
-    imageLinks: object;
+    imageLinks: { thumbnail: string; smallThumbnail: string; };
     industryIdentifiers: object[];
     infoLink: string;
     language: string;
