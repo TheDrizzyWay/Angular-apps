@@ -29,7 +29,7 @@ import {
     MatTooltipModule,
   } from '@angular/material';
 
-  @NgModule({
+@NgModule({
     imports: [
       MatAutocompleteModule,
       MatButtonModule,
@@ -89,4 +89,4 @@ import {
       MatNativeDateModule,
     ]
   })
-  export class MaterialModule {};
+  export class MaterialModule {}
