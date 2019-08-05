@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
   results: any[];
   items: any[];
   constructor() {
-    this.results = [{ id: 1}];
+    this.results = [{ id: 1 }];
     this.items = ['a', 'b', 'c'];
   }
 

@@ -1,3 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+.search-container {
+  float: right;
+}
+
+ input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 20px;
+  border: none;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 6px;
+  margin-right: 16px;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .search-container {
+    float: none;
+  }
+  input[type=text], .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
