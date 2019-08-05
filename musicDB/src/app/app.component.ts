@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppserviceService } from './appservice.service';
+import { Album } from './models/Album';
 
 @Component({
   selector: 'app-root',
@@ -6,17 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  results: any[];
+  result: Album;
   items: any[];
-  constructor() {
-    this.results = [{ id: 1 }];
+  constructor(private appService: AppserviceService) {
+    this.result = {} as Album;
     this.items = ['a', 'b', 'c'];
   }
 
   ngOnInit(): void {
+    this.searchArtiste('eminem');
   }
 
-  searchItem(id: number) {
-
+  searchArtiste(name: string): void {
+    if (!name) {
+      return alert('please insert artiste name');
+    }
+    this.appService.getAlbums(name).subscribe(albums => {
+      this.result = albums[0];
+    });
   }
 }

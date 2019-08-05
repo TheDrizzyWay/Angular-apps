@@ -4,8 +4,10 @@
     <span class="example-spacer"></span>
     <div class="search-container">
         <form>
-          <input #search type="text" placeholder="Search...">
-          <button type="submit"><mat-icon>search</mat-icon></button>
+          <input #search type="text" placeholder="Search artiste name">
+          <button type="submit" (click)="searchArtiste(search.value)">
+            <mat-icon>search</mat-icon>
+          </button>
         </form>
     </div>
 </mat-toolbar>
@@ -21,14 +23,14 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-card class="example-card"  *ngFor="let result of results">
+    <mat-card class="example-card"  *ngIf="result">
       <mat-card-header>
-        <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ result.id +'.png)'}" class="example-header-image"></div>
-        <mat-card-title class="title">{{result}}</mat-card-title>
-        <mat-card-subtitle>{{result}}</mat-card-subtitle>
+        <img mat-card-avatar [src]="result.strAlbumThumb">
+        <mat-card-title class="title">{{result.strAlbum}}</mat-card-title>
+        <mat-card-subtitle>Released: {{result.intYearReleased}}</mat-card-subtitle>
       </mat-card-header>
 
-      <img mat-card-image class="img-article" src={{result.urlToImage}} alt="">
+      <img mat-card-image class="img-article" src={{result.strAlbumThumbHQ||result.strAlbumThumb}} alt="">
       <mat-card-content>
         <p>
           {{result}}
