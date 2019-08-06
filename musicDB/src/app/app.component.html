@@ -11,6 +11,7 @@
         </form>
     </div>
 </mat-toolbar>
+<ngx-spinner name="mySpinner"></ngx-spinner>
 
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav class="example-sidenav" mode="side">
@@ -30,7 +31,7 @@
         <mat-card-subtitle>Released: {{result.intYearReleased}}</mat-card-subtitle>
       </mat-card-header>
 
-      <img mat-card-image class="img-article" src={{result.strAlbumThumbHQ||result.strAlbumThumb}} alt="">
+      <img mat-card-image class="img-article" src={{result.strAlbumThumbHQ||result.strAlbumThumb}} alt="album art">
       <mat-card-content>
         <p>
           {{result}}
