@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     private spinner: NgxSpinnerService
     ) {
     this.result = {} as Album;
-    this.items = ['a', 'b', 'c'];
+    this.items = [];
   }
 
   ngOnInit(): void {
@@ -26,16 +26,27 @@ export class AppComponent implements OnInit {
   searchArtiste(name: string): void {
     this.spinner.show('mySpinner', { type: 'line-scale' });
     if (!name) {
+      this.spinner.hide('mySpinner');
       return alert('please insert artiste name');
     }
+
     this.appService.getAlbums(name).subscribe(albums => {
+      if (!albums) {
+        this.spinner.hide('mySpinner');
+        return alert(`No result found for ${name}`);
+      }
       const removeSingles = albums.filter(album => album.strReleaseFormat === 'Album');
       removeSingles.sort((a, b) => {
         return (+b.intYearReleased) - (+a.intYearReleased);
       });
 
       this.result = removeSingles[0];
-      setTimeout(() => this.spinner.hide('mySpinner'), 2000);
+      this.items = removeSingles;
+      setTimeout(() => this.spinner.hide('mySpinner'), 1500);
     });
+  }
+
+  setItem(id: string): void {
+
   }
 }

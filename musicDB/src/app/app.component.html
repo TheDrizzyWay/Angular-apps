@@ -16,9 +16,8 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav class="example-sidenav" mode="side">
         <mat-list class="list-nav">
-            <mat-list-item class="list-item" *ngFor="let item of items" (click)="searchItem(item.id);sidenav.close();">
-              <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ item.id +'.png)'}" class="example-header-image"></div>
-              <span class="source-name"> {{item}} </span>
+            <mat-list-item class="list-item" *ngFor="let item of items" (click)="setItem(item.idAlbum);sidenav.close();">
+              <span class="source-name"> {{ item.strAlbum }} </span>
             </mat-list-item>
         </mat-list>
   </mat-sidenav>
@@ -39,10 +38,11 @@
       </mat-card-content>
 
       <mat-card-actions class="action-buttons">
-        <button mat-button color="primary"><mat-icon>thumb_up_alt</mat-icon> 12 Likes</button>
-        <button mat-button color="primary"><mat-icon>comment</mat-icon> Comments</button>
+        <button mat-button color="primary"><mat-icon>volume_up</mat-icon> {{ result.intSales }} Sold</button>
         <button mat-button color="primary"><mat-icon>share</mat-icon> Share</button>
-        <a mat-button color="primary" href={{result.url}} target="_blank" ><mat-icon>visibility</mat-icon> More</a>
+        <a mat-button color="primary" href="https://en.wikipedia.org/wiki/{{result.strWikipediaID}}" target="_blank" >
+          <mat-icon>visibility</mat-icon> More
+        </a>
       </mat-card-actions>
     </mat-card>
   </mat-sidenav-content>
