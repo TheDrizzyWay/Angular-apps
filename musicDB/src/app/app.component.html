@@ -23,7 +23,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-card class="example-card"  *ngIf="result">
+    <mat-card class="example-card"  *ngIf="(result | json) != '{}'">
       <mat-card-header>
         <img mat-card-avatar [src]="result.strAlbumThumb">
         <mat-card-title class="title">{{result.strAlbum}}</mat-card-title>
@@ -33,7 +33,7 @@
       <img mat-card-image class="img-article" src={{result.strAlbumThumbHQ||result.strAlbumThumb}} alt="album art">
       <mat-card-content>
         <p>
-          {{result}}
+          {{ result.strDescriptionEN }}
         </p>
       </mat-card-content>
 

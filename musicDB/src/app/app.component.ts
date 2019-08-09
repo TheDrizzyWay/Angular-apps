@@ -42,11 +42,11 @@ export class AppComponent implements OnInit {
 
       this.result = removeSingles[0];
       this.items = removeSingles;
-      setTimeout(() => this.spinner.hide('mySpinner'), 1500);
+      this.spinner.hide('mySpinner');
     });
   }
 
   setItem(id: string): void {
-
+    this.result = this.items.find(item => item.idAlbum === id);
   }
 }
