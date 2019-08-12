@@ -49,4 +49,9 @@ export class AppComponent implements OnInit {
   setItem(id: string): void {
     this.result = this.items.find(item => item.idAlbum === id);
   }
+
+  setClass(id: string) {
+    const classes = { active: id === this.result.idAlbum };
+    return classes;
+  }
 }
