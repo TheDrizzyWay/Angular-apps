@@ -39,7 +39,9 @@
 
       <mat-card-actions class="action-buttons">
         <button mat-button color="primary"><mat-icon>volume_up</mat-icon> {{ result.intSales }} Sold</button>
-        <button mat-button color="primary"><mat-icon>share</mat-icon> Share</button>
+        <button mat-button color="primary" (click)="openDialog()">
+          <mat-icon>share</mat-icon> Tracks
+        </button>
         <a mat-button color="primary" href="https://en.wikipedia.org/wiki/{{result.strWikipediaID}}" target="_blank" >
           <mat-icon>visibility</mat-icon> More
         </a>

@@ -8,10 +8,12 @@ import { MaterialModule } from './material.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TracksModalComponent } from './tracks-modal.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TracksModalComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,9 @@ import { AppComponent } from './app.component';
     MaterialModule,
   ],
   providers: [],
+  entryComponents: [
+    TracksModalComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

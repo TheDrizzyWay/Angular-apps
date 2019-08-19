@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { MatDialog } from '@angular/material/dialog';
 import { AppserviceService } from './appservice.service';
 import { Album } from './models/Album';
+import { TracksModalComponent } from './tracks-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,8 @@ export class AppComponent implements OnInit {
   items: any[];
   constructor(
     private appService: AppserviceService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    public dialog: MatDialog
     ) {
     this.result = {} as Album;
     this.items = [];
@@ -53,5 +56,13 @@ export class AppComponent implements OnInit {
   setClass(id: string) {
     const classes = { active: id === this.result.idAlbum };
     return classes;
+  }
+
+  openDialog(): void {
+    this.dialog.open(TracksModalComponent, {
+      width: '400px',
+      height: '500px',
+      data: { album: this.result.idAlbum }
+    });
   }
 }
