@@ -40,3 +40,7 @@ export interface Track {
   strMusicBrainzArtistID: string;
   strLocked: string;
 }
+
+export interface TrackObject {
+  track: [];
+}
