@@ -1,0 +1,24 @@
+<nav [ngClass]="setNavClass()">
+  <ul class="navigation__container">
+    <a routerLink="/" class="navigation__container-link">
+      <img class="navigation__container--logo" src="/assets/images/Netflix_Logo_RGB.png" />
+    </a>
+  <img src="/assets/images/drop-down-arrow.svg" class="navigation__container--downArrow-2" />
+    <div class="navigation__container-link pseudo-link">Home</div>
+    <div class="navigation__container-link pseudo-link">TV Shows</div>
+    <div class="navigation__container-link pseudo-link">Movies</div>
+    <div class="navigation__container-link pseudo-link">Recently Added</div>
+    <div class="navigation__container-link pseudo-link">My List</div>
+
+    <div class="navigation__container--left">
+      <img src="/assets/images/search-icon.svg" class="logo">
+      <input (change)="showMovies()" class="navigation__container--left__input" type="text" placeholder="Title, genres, people" />
+    </div>
+
+    <div class="navigation__container-link pseudo-link">KIDS</div>
+    <div class="navigation__container-link pseudo-link">DVD</div>
+    <img src="/assets/images/bell-logo.svg" class="navigation__container--bellLogo">
+    <app-dropdown></app-dropdown>
+    <img src="/assets/images/drop-down-arrow.svg" class="navigation__container--downArrow">
+  </ul>
+</nav>
