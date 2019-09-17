@@ -1,0 +1,15 @@
+<header [ngStyle]="backgroundStyle" class="header">
+  <div class="header__container">
+    <h1 class="header__container-heading">{{ movie.name }}</h1>
+    <button class="header__container-btnPlay" (click)="dummy()">
+      <img src="/assets/images/play-button.svg" class="header__container-btnMyList-play" />
+      Play
+    </button>
+    <button class="header__container-btnMyList">
+      <img src="/assets/images/add.svg" class="header__container-btnMyList-play" />
+      My List
+    </button>
+    <p class="header__container-overview">{{ movie.overview }}</p>
+  </div>
+  <div class="header--fadeBottom"></div>
+</header>
