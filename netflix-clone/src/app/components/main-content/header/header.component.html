@@ -1,4 +1,4 @@
-<header [ngStyle]="backgroundStyle" class="header">
+<header *ngIf="movie" [ngStyle]="setBackgroundStyle()" class="header">
   <div class="header__container">
     <h1 class="header__container-heading">{{ movie.name }}</h1>
     <button class="header__container-btnPlay" (click)="dummy()">

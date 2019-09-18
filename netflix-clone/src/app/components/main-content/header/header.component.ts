@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TvShow } from '../../../models/TvShow';
 
 @Component({
   selector: 'app-header',
@@ -6,21 +7,24 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  backgroundStyle: object;
+  @Input() movie: TvShow;
 
-  @Input() movie: any; // change type later
-  constructor() {
-    this.backgroundStyle = {
-      backgroundSize: 'cover',
-      // backgroundImage: `url(https://image.tmdb.org/t/p/original/${this.movie.backdrop_path})`,
-      backgroundPosition: 'center',
-    };
-  }
+  constructor() {}
 
   ngOnInit() {
+
   }
 
   dummy() {
     alert('not a movie!');
+  }
+
+  setBackgroundStyle() {
+    const backgroundStyle = {
+      backgroundSize: 'cover',
+      backgroundImage: this.movie ? `url(https://image.tmdb.org/t/p/original/${this.movie.backdrop_path})` : null,
+      backgroundPosition: 'center',
+    };
+    return backgroundStyle;
   }
 }

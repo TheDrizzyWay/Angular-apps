@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from '../../services/movie.service';
+import { TvShow } from '../../models/TvShow';
 
 @Component({
   selector: 'app-main-content',
@@ -6,15 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-content.component.scss']
 })
 export class MainContentComponent implements OnInit {
-  selectedMovie: any; // change type later
-  constructor() { }
+  selectedMovie: TvShow;
+  constructor(private movieService: MovieService) { }
 
   ngOnInit() {
-    this.getMovie();
+    this.getDefaultMovie();
   }
 
-  getMovie() {
-    // change later
-    this.selectedMovie = { name: 'test', overview: 'test' };
+  getDefaultMovie(): void {
+    this.movieService.getDefault().subscribe(res => this.selectedMovie = res);
   }
 }
