@@ -1,5 +1,5 @@
 <div>
 <app-navbar></app-navbar>
-<ng-template #searchedMovies><div>test</div></ng-template>
-<app-main-content *ngIf="!movieList.length; else searchedMovies"></app-main-content>
+<ng-template #searchedMovies><div class="search-container">test</div></ng-template>
+<app-main-content *ngIf="toggleSearch; else searchedMovies"></app-main-content>
 </div>

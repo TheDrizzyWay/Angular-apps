@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
   movieList: any[];
+  toggleSearch: boolean;
   constructor() {
-    this.movieList = [];
+    this.toggleSearch = true;
   }
 
   ngOnInit() {}

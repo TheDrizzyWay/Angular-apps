@@ -9,6 +9,12 @@ import { DropdownComponent } from './components/navbar/dropdown/dropdown.compone
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { HeaderComponent } from './components/main-content/header/header.component';
 import { FooterComponent } from './components/main-content/footer/footer.component';
+import { NetflixOriginalsComponent } from './components/netflix-originals/netflix-originals.component';
+import { TrendingComponent } from './components/trending/trending.component';
+import { TopRatedComponent } from './components/top-rated/top-rated.component';
+import { ActionMoviesComponent } from './components/action-movies/action-movies.component';
+import { ComedyMoviesComponent } from './components/comedy-movies/comedy-movies.component';
+import { HorrorMoviesComponent } from './components/horror-movies/horror-movies.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,13 @@ import { FooterComponent } from './components/main-content/footer/footer.compone
     DropdownComponent,
     MainContentComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NetflixOriginalsComponent,
+    TrendingComponent,
+    TopRatedComponent,
+    ActionMoviesComponent,
+    ComedyMoviesComponent,
+    HorrorMoviesComponent
   ],
   imports: [
     BrowserModule,
